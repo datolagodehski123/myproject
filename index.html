@@ -7,10 +7,19 @@
 <body>
   <h1>Привет, мир!</h1>
   <p id="status">Подключение к Firebase...</p>
+
   <script type="module">
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-    
-    import { firebaseConfig } from "./firebase-config.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyAZAhQKopYH_vF8oFA4XCzT6M_k0BgcPyE",
+      authDomain: "david444-d51cf.firebaseapp.com",
+      projectId: "david444-d51cf",
+      storageBucket: "david444-d51cf.firebasestorage.app",
+      messagingSenderId: "268572029523",
+      appId: "1:268572029523:web:912da2c747cf9c9c560ca6"
+    };
+
     const app = initializeApp(firebaseConfig);
 
     document.getElementById("status").innerText = "Firebase успешно подключен!";
