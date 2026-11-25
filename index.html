@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head><title>Мой сайт</title></head>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мой сайт</title>
+</head>
 <body>
   <h1>Привет, мир!</h1>
-  <script>
-    console.log("JS работает");
+  <p id="status">Подключение к Firebase...</p>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+
+    import { firebaseConfig } from "./firebase-config.js";
+
+    const app = initializeApp(firebaseConfig);
+    
+    const analytics = getAnalytics(app);
+
+    document.getElementById("status").innerText = "Firebase успешно подключен!";
+    console.log("Firebase успешно подключен!", app);
   </script>
 </body>
 </html>
